@@ -8,5 +8,5 @@ const Loginpage = () => (
   </div>
 );
 
-export { loginActions } from '../modules/LoginForm';
+// export { loginActions } from '../modules/LoginForm';
 export default Loginpage;

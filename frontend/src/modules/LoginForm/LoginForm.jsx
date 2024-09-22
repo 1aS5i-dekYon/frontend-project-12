@@ -3,13 +3,14 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 import { AuthFormField } from '../../UI';
 // import { loginUser } from './loginSlice.js';
 
 export default () => {
   // const [loginError, setLoginError] = useState(null);
-
+  const navigate = useNavigate();
   const LoginSchema = Yup.object().shape({
     username: Yup.string()
       .min(6, 'Минимум 6 букв')
@@ -38,6 +39,8 @@ export default () => {
       //   setLoginError(e.message);
       //   // fn из useState для показа алерта с ошибкой валидации и самой ошибки
       // }
+      navigate('/');
+      // а тут navigate работает ! ! !
     },
   });
 

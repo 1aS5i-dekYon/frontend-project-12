@@ -6,11 +6,12 @@ import { Navbar, Container } from 'react-bootstrap';
 // import { useEffect, useState } from 'react';
 
 import Loginpage from './pages/Loginpage.jsx';
+import Chatpage from './pages/Chatpage.jsx';
 
 const TokenChecker = () => {
   // const [result, setRoute] = useState();
   const navigate = useNavigate();
-  // const token = loginActions.getToken();
+  // const token = getToken();
   const token = false;
   return (
     <div>
@@ -27,7 +28,7 @@ const TokenChecker = () => {
         </Container>
       </Navbar>
       result:
-      {token ? <Outlet /> : navigate('/login')}
+      {!token ? <Outlet /> : navigate('/login')}
       end
     </div>
   );
@@ -38,7 +39,7 @@ export default () => (
     <div className="d-flex flex-column vh-100">
       <Routes>
         <Route element={<TokenChecker />}>
-          <Route path="/" element={<div>chat page</div>} />
+          <Route path="/" element={<Chatpage />} />
         </Route>
         <Route element={<TokenChecker />}>
           <Route path="/signup" element={<div>Sign up</div>} />
