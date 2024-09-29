@@ -14,20 +14,22 @@ export const loginUser = createAsyncThunk(
 const loginSlice = createSlice({
   name: 'login',
   initialState: { token: null },
-  reducers: {
-    getToken(state) {
-      const token = getToken();
-      state.token = token;
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.fulfilled, (state, action) => {
-        setToken(action.token);
+        console.log('action:', action);
+        console.log('token before storage:', action.payload.token);
+        setToken(action.payload.token);
+        const token = getToken();
+        console.log('token:', token);
+        state.token = token;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        console.log(state, '|', action.error);
       });
   },
 });
-export const { actions } = loginSlice;
+
 export default loginSlice.reducer;
 
 // removeToken(state) {

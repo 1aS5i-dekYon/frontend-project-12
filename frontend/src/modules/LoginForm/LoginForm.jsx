@@ -4,13 +4,16 @@ import * as Yup from 'yup';
 
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { AuthFormField } from '../../UI';
-// import { loginUser } from './loginSlice.js';
+import { loginUser } from './loginSlice.js';
 
 export default () => {
+  const dispatch = useDispatch();
   // const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
+
   const LoginSchema = Yup.object().shape({
     username: Yup.string()
       .min(6, 'Минимум 6 букв')
@@ -31,14 +34,14 @@ export default () => {
     onSubmit: (values) => {
       console.log(JSON.stringify(values), 'submit');
       alert(JSON.stringify(values, null, 2));
-      // try {
-      //   loginUser(values);
-      // } catch (e) {
-      //   formik.setSubmitting(false);
-      //   console.log(e.message);
-      //   setLoginError(e.message);
-      //   // fn из useState для показа алерта с ошибкой валидации и самой ошибки
-      // }
+      try {
+        dispatch(loginUser(values));
+      } catch (e) {
+        formik.setSubmitting(false);
+        console.log(e.message);
+        // setLoginError(e.message);
+        // fn из useState для показа алерта с ошибкой валидации и самой ошибки
+      }
       navigate('/');
       // а тут navigate работает ! ! !
     },

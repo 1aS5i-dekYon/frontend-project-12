@@ -3,12 +3,15 @@ import { ChannelsList } from '../modules/ChannelsList';
 import { ChatArea } from '../modules/ChatArea';
 
 const Chatpage = () => (
-  <div className="row container h-100 col-12 col-md-8">
+  <div className="row justify-content-center align-content-center">
     <ChannelsList />
-    <ChatArea />
+    <div className="col-10 col-md-6 border border-dark">
+      <ChatArea activeChannelName="general" activeChannelId={1} />
+    </div>
   </div>
 );
 
 export default Chatpage;
 
-// работаем чеез сокеты в отдельных модулях и все работает заебато!!! )) я рад
+// работаем через ВСЕ сокеты ТУТ и все работает заебато!!! )) я рад
+// значения состояния прокидваются во все нужные компоненты и все рады
