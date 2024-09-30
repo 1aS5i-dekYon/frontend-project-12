@@ -6,7 +6,7 @@ import {
 
 const channelsAdapter = createEntityAdapter();
 
-const messagesSlice = createSlice({
+const channelsSlice = createSlice({
   name: 'channels',
   initialState: channelsAdapter.getInitialState(),
   extraReducers: (builder) => {
@@ -14,8 +14,12 @@ const messagesSlice = createSlice({
       .addCase(getChannels.fulfilled, channelsAdapter.addMany)
       .addCase(addChannel.fulfilled, channelsAdapter.addOne)
       .addCase(editChannel.fulfilled, channelsAdapter.updateOne)
-      .addCase(removeChannel.fulfilled, channelsAdapter.removeOne);
+      .addCase(removeChannel.fulfilled, channelsAdapter.removeOne)
+      .addCase(getChannels.rejected, (state, action) => {
+        console.log('getChannels:', state, '|', action.error);
+      });
   },
 });
-export const { actions } = messagesSlice;
-export default messagesSlice.reducer;
+
+export const selectors = channelsAdapter.getSelectors((state) => state.channels);
+export default channelsSlice.reducer;

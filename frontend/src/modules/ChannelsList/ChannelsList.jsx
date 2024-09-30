@@ -1,6 +1,24 @@
-// import { RemovableChannelButton, ConstChannelButton } from "../../UI";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-export default () => (
+import { getChannels } from './channelsThunks.js';
+import { selectors } from './channelsSlice.js';
+
+// import { RemovableChannelButton, ConstChannelButton } from '../../UI';
+
+export default ({ activeChannelId, handleClick }) => {
+  const dispatch = useDispatch();
+  
+  const channels = useSelector(selectors.selectAll);
+  // .filter(({ channelId }) => channelId === activeChannelId);
+  
+  console.log(channels, activeChannelId, handleClick);
+
+  useEffect(() => {
+    dispatch(getChannels());
+  }, []);
+
+  return (
   <div className="col-4 col-md-2 text-start border border-dark" role="group" aria-label="Button group with nested dropdown">
     <div className="d-flex mt-1 justify-content-between mb-2 ps-4 pe-2 p-4">
       <b>Каналы</b>
@@ -24,5 +42,5 @@ export default () => (
         <button type="button" className="dropdown-item">Dropdown link</button>
       </div>
     </div>
-  </div>
-);
+  </div>)
+};
