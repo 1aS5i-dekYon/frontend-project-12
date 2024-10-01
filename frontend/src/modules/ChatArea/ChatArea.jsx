@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { getMessages } from './messagesThunks.js';
 import { selectors } from './messagesSlice.js';
-// import { ChatHeader } from '../../UI';
+import { ChatHeader } from '../../UI';
 
 export default ({ activeChannelName, activeChannelId }) => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default ({ activeChannelName, activeChannelId }) => {
   const activeChannelMessages = useSelector(selectors.selectAll)
     .filter(({ channelId }) => channelId === activeChannelId);
   
-  console.log(activeChannelMessages);
+  console.log('activeChannelMessages:', activeChannelMessages);
 
   useEffect(() => {
     dispatch(getMessages());
@@ -19,7 +19,7 @@ export default ({ activeChannelName, activeChannelId }) => {
 
   return (
     <div>
-      {/* <ChatHeader channelName={activeChannelName} messagesCount={0} /> */}
+      <ChatHeader channelName={activeChannelName} messagesCount={activeChannelMessages.length} />
       <div className="col-10 col-md-6 border border-dark">
         {activeChannelName}
         chat:

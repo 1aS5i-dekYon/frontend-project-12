@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-// import { RegistrationFooter } from '../UI';
 import { ChannelsList } from '../modules/ChannelsList';
 import { ChatArea } from '../modules/ChatArea';
 
