@@ -1,0 +1,32 @@
+{
+  "translation": {
+    "language": "English",
+    "appName": "Hexlet Chat",
+    "navbar": {
+      "logOut": "Log out"
+    },
+    "loginPage": {
+      "header": "Sign in",
+      "username": "Nickname",
+      "password": "Password",
+      "noAccount": "Don’t have an account?",
+      "signUp": "Sign up"
+    },
+    "modals": {
+      "title": {
+        "add": "Add channel",
+        "rename": "Rename channel",
+        "remove": "Delete channel"
+      },
+      "btnText": {
+        "add": "send",
+        "rename": "send",
+        "remove": "Delete",
+        "cancel": "Cancel"
+      },
+      "warning": {
+        "remove": "This channel and all its messages will be deleted"
+      }
+    }
+  }
+}

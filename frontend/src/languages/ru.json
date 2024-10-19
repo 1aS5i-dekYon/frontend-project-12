@@ -1,0 +1,32 @@
+{
+  "translation": {
+    "language": "Русский",
+    "appName": "Hexlet Chat",
+    "navbar": {
+      "logOut": "Выйти"
+    },
+    "loginPage": {
+      "header": "Вход",
+      "username": "Ник",
+      "password": "Пароль",
+      "noAccount": "Нет аккаунта?",
+      "signUp": "Зарегистрироваться"
+    },
+    "modals": {
+      "title": {
+        "add": "Добавить канал",
+        "rename": "Переименовать канал",
+        "remove": "Удалить аккаунт"
+      },
+      "btnText": {
+        "add": "Отправить",
+        "rename": "Отправить",
+        "remove": "Удалить",
+        "cancel": "Закрыть"
+      },
+      "warning": {
+        "remove": "Этот канал и вся его история общения будут удалены"
+      }
+    }
+  }
+}
