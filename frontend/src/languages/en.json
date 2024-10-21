@@ -32,6 +32,13 @@
       "warning": {
         "remove": "This channel and all its messages will be deleted"
       }
+    },
+    "channels": {
+      "title": "Channels",
+      "actions": "Channel actions",
+      "add": "Create channel",
+      "rename": "Rename",
+      "remove": "Remove"
     }
   }
 }
