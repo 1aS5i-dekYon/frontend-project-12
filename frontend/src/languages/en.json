@@ -2,6 +2,11 @@
   "translation": {
     "language": "English",
     "appName": "Hexlet Chat",
+    "errors": {
+      "required": "Please fill out",
+      "outOfLenght": "Should be 3 to 20 characters",
+      "notUniqueChannel": "A channel with this name already exists"
+    },
     "navbar": {
       "logOut": "Log out"
     },
@@ -19,8 +24,8 @@
         "remove": "Delete channel"
       },
       "btnText": {
-        "add": "send",
-        "rename": "send",
+        "add": "Send",
+        "rename": "Send",
         "remove": "Delete",
         "cancel": "Cancel"
       },

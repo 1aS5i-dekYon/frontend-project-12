@@ -2,6 +2,11 @@
   "translation": {
     "language": "Русский",
     "appName": "Hexlet Chat",
+    "errors": {
+      "required": "Необходимо заполнить поле",
+      "outOfLenght": "От 3 до 20 символов",
+      "notUniqueChannel": "Канал с таким именем уже есть"
+    },
     "navbar": {
       "logOut": "Выйти"
     },

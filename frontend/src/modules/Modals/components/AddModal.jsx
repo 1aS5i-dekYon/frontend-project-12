@@ -46,13 +46,13 @@ const AddModal = ({ handleClose, handleAction, existingChannelNames }) => {
             fieldName="name"
             handleChange={formik.handleChange}
             fieldValue={formik.values.name}
-            errorText={formik.errors.name}
+            errorText={t(formik.errors.name)}
             isTouched={formik.touched.name}
           />
           <FormBtnGroup
             handleClose={handleClose}
-            textCloseBtn="close"
-            textActionBtn="send"
+            textCloseBtn={t('btnText.cancel')}
+            textActionBtn={t('btnText.add')}
           />
         </Form>
       </Modal.Body>
