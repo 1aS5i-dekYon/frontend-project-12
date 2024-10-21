@@ -6,3 +6,4 @@ export { default as ConstChannelButton } from './ConstChannelButton.jsx';
 export { default as RemovableChannelButton } from './RemovableChannelButton.jsx';
 export { default as ChatHeader } from './ChatHeader.jsx';
 export { default as FormBtnGroup } from './FormBtnGroup.jsx';
+export { default as AddChannelButton } from './AddChannelButton.jsx';

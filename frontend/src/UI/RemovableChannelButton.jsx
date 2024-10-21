@@ -1,14 +1,35 @@
+import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
+
 export default ({
-  buttonName, buttonId, handleRemove, handleRename,
+  buttonName,
+  isActive,
+  variant,
+  handleSelect,
+  handleRemoveChannel,
+  handleRenameChannel,
 }) => (
-  <div key={buttonId} className="btn-group w-100" role="group">
-    <button type="button" className="btn dropdown-toggle text-start rounded border border-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <Dropdown as={ButtonGroup} className="w-100 rounded border border-dark">
+    <Button
+      active={isActive}
+      variant={variant}
+      className="text-start text-truncate me-auto"
+      onClick={handleSelect}
+    >
       <strong className="h4"># </strong>
       <span>{buttonName}</span>
-    </button>
-    <div className="dropdown-menu" aria-labelledby={buttonId}>
-      <button type="button" className="dropdown-item" onClick={handleRemove}>Удалить</button>
-      <button type="button" className="dropdown-item" onClick={handleRename}>Переименовать</button>
-    </div>
-  </div>
+    </Button>
+
+    <Dropdown.Toggle
+      active={isActive}
+      split
+      variant={variant}
+      className="border-0 flex-grow-0"
+    >
+      <span className="visually-hidden">Действия над каналом</span>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item onClick={handleRenameChannel}>Переименовать</Dropdown.Item>
+      <Dropdown.Item onClick={handleRemoveChannel}>Удалить</Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
 );
