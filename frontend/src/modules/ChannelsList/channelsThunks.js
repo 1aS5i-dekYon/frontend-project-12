@@ -18,8 +18,8 @@ const getChannels = createAsyncThunk(
 // Пример: const newChannel = { name: 'new channel' }
 const addChannel = createAsyncThunk(
   'channels/addChannel',
-  async (newChannel) => {
-    const response = await axios.post('/api/v1/channels', newChannel, {
+  async (name) => {
+    const response = await axios.post('/api/v1/channels', { name }, {
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
@@ -31,8 +31,8 @@ const addChannel = createAsyncThunk(
 // Пример: cconst editedChannel = { name: 'new name channel' };
 const editChannel = createAsyncThunk(
   'channels/editChannel',
-  async (id, editedChannel) => {
-    const response = axios.patch(`/api/v1/channels/${id}`, editedChannel, {
+  async ({ id, name }) => {
+    const response = axios.patch(`/api/v1/channels/${id}`, { name }, {
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
