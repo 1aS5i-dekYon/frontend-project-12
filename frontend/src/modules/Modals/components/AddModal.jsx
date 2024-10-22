@@ -51,8 +51,8 @@ const AddModal = ({ handleClose, handleAction, existingChannelNames }) => {
           />
           <FormBtnGroup
             handleClose={handleClose}
-            textCloseBtn={t('btnText.cancel')}
-            textActionBtn={t('btnText.add')}
+            textCloseBtn={t('modals.btnText.cancel')}
+            textActionBtn={t('modals.btnText.add')}
           />
         </Form>
       </Modal.Body>

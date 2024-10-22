@@ -58,8 +58,8 @@ const RenameChannel = ({ handleClose, handleAction, existingChannelNames }) => {
           />
           <FormBtnGroup
             handleClose={handleClose}
-            textCloseBtn={t('btnText.cancel')}
-            textActionBtn={t('btnText.rename')}
+            textCloseBtn={t('modals.btnText.cancel')}
+            textActionBtn={t('modals.btnText.rename')}
           />
         </Form>
       </Modal.Body>

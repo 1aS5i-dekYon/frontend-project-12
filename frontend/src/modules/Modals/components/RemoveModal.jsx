@@ -34,8 +34,8 @@ const RemoveChannel = ({ handleClose, handleAction }) => {
         <Form onSubmit={handleSubmit}>
           <FormBtnGroup
             handleClose={handleClose}
-            textCloseBtn={t('btnText.cancel')}
-            textActionBtn={t('btnText.remove')}
+            textCloseBtn={t('modals.btnText.cancel')}
+            textActionBtn={t('modals.btnText.remove')}
           />
         </Form>
       </Modal.Body>
