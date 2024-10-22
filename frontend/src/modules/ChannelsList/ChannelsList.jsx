@@ -7,7 +7,7 @@ import { selectors } from './channelsSlice.js';
 import { ChannelHeader } from '../../components';
 import { ConstChannelButton, RemovableChannelButton } from '../../UI';
 
-export default ({ actions, handleClick, activeChannelId}) => {
+export default ({ actions, handleClick, activeChannelId }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,7 +15,8 @@ export default ({ actions, handleClick, activeChannelId}) => {
   }, [activeChannelId]);
   
   const channels = useSelector(selectors.selectAll);
-  // console.log('Channelslist:', channels, 'activeChannelId:', activeChannelId, 'handleClick:', handleClick);
+  // console.log('Channelslist:', channels);
+  // console.log('activeChannelId:', activeChannelId, 'handleClick:', handleClick);
 
   return (
     <section
