@@ -39,6 +39,10 @@
       "add": "Create channel",
       "rename": "Rename",
       "remove": "Remove"
+    },
+    "chat": {
+      "messages_one": "{{count}} message",
+      "messages_other": "{{count}} messages"
     }
   }
 }

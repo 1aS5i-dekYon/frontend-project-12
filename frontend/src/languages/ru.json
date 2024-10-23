@@ -39,6 +39,11 @@
       "add": "Создать канал",
       "rename": "Переименовать",
       "remove": "Удалить"
+    },
+    "chat": {
+      "messages_one": "{{count}} сообщение",
+      "messages_few": "{{count}} сообщения",
+      "messages_many": "{{count}} cообщений"
     }
   }
 }
