@@ -8,6 +8,7 @@ import './index.css';
 
 import App from './App.jsx';
 import store from './rootStore.js';
+import SocketProvider from './providers/SocketProvider.jsx';
 import resources from './languages';
 
 const init = async () => {
@@ -24,7 +25,9 @@ const init = async () => {
   return (
     <I18nextProvider i18n={i18n}>
       <Provider store={store}>
-        <App />
+        <SocketProvider>
+          <App />
+        </SocketProvider>
       </Provider>
     </I18nextProvider>
   )
