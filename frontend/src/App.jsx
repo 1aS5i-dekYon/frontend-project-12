@@ -7,6 +7,7 @@ import { Navbar, Container } from 'react-bootstrap';
 // import { useEffect, useState } from 'react';
 
 import Loginpage from './pages/Loginpage.jsx';
+import Registrationpage from './pages/Registrationpage.jsx';
 import Chatpage from './pages/Chatpage.jsx';
 import { getToken } from './services/localStorage';
 
@@ -18,8 +19,8 @@ const TokenChecker = () => {
 
 export default () => (
   <BrowserRouter>
-    <div className="d-flex flex-column vh-100">
-      <Navbar className="bg-body-tertiary">
+    <div className="d-flex flex-column vh-100 bg-light-brown">
+      <Navbar className="bg-light-marsh">
         <Container>
           <Navbar.Brand href="#home">Moy Chat</Navbar.Brand>
           <Navbar.Toggle />
@@ -36,7 +37,7 @@ export default () => (
         <Route path="/" element={<TokenChecker />}>
           <Route index element={<Chatpage />} />
         </Route>
-        <Route path="/signup" element={<div>Sign up</div>} />
+        <Route path="/signup" element={<Registrationpage />} />
         <Route path="/login" element={<Loginpage />} />
         <Route path="*" element={<h1>404 page not found</h1>} />
       </Routes>
@@ -44,15 +45,3 @@ export default () => (
     </div>
   </BrowserRouter>
 );
-
-// useEffect(() => {
-//   const token = JSON.parse(localStorage.getItem('token'));
-//   const route = token ? <Outlet/> : navigate("/login");
-//   // const route = <Outlet/>;
-//   setRoute(route);
-// }, [navigate]);
-// return (
-//   <div>
-//     result: {result} end
-//   </div>
-// )
