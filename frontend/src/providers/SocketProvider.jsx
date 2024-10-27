@@ -10,8 +10,6 @@ const SocketContext = createContext({});
 const socket = io('/', { autoConnect: false });
 
 const SocketProvider = ({ children }) => {
-  const timout = 5000;
-
   const dispatch = useDispatch();
 
   const context = useMemo(() => {

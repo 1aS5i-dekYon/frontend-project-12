@@ -1,12 +1,23 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
+import { useSocket } from '../providers/SocketProvider.jsx';
 import { ChannelsList, channelsSelector, channelsThunks } from '../modules/ChannelsList';
 import { ChatArea } from '../modules/ChatArea';
 import { ChannelModal, modalActions } from '../modules/Modals';
 
 const Chatpage = () => {  
   const dispatch = useDispatch();
+
+  const { connectSocket, disconnectSocket } = useSocket();
+  
+  useEffect(() => {
+    connectSocket();
+
+    return () => {
+      disconnectSocket();
+    };
+  }, [connectSocket, disconnectSocket, dispatch]);
 
   const addChannel = () => {
     dispatch(modalActions.open({ type: 'add' }));
