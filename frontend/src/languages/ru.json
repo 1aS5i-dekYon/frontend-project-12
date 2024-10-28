@@ -4,18 +4,44 @@
     "appName": "Hexlet Chat",
     "errors": {
       "required": "Необходимо заполнить поле",
-      "outOfLenght": "От 3 до 20 символов",
-      "notUniqueChannel": "Канал с таким именем уже есть"
+      "min3chars": "Не менее 3 символов",
+      "min6chars": "Не менее 6 символов",
+      "max20chars": "Не более 20 символов",
+      "max50chars": "Не более 50 символов",
+      "notSamePassword": "Пароли должны совпадать",
+      "userExists": "Такой пользователь уже существует",
+      "notUniqueChannel": "Канал с таким именем уже есть",
+      "authFailed": "Неверные имя пользователя или пароль"
+    },
+    "netErrors": {
+      "noConnection": "Ошибка соединения"
+    },
+    "field": {
+      "label": {
+        "username": "Имя пользователя",
+        "password": "Пароль",
+        "confirmPassword": "Подтвердите пароль"
+      },
+      "enter": {
+        "username": "Введите имя пользователя",
+        "password": "Введите пароль",
+        "confirmPassword": "Подтвердите пароль"
+      }
     },
     "navbar": {
       "logOut": "Выйти"
     },
     "loginPage": {
       "header": "Вход",
-      "username": "Ник",
-      "password": "Пароль",
+      "signIn": "Войти",
       "noAccount": "Нет аккаунта?",
       "signUp": "Зарегистрироваться"
+    },
+    "registrationPage": {
+      "header": "Регистрация",
+      "signUp": "Зарегистрироваться",
+      "haveAccount": "Уже зарегистрированы?",
+      "login": "Войдите под своим именем"
     },
     "modals": {
       "title": {

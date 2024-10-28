@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { AuthFormField } from '../../UI';
 import { registrationUser } from './registrationSlice.js';
@@ -12,20 +13,20 @@ import { registrationUser } from './registrationSlice.js';
 export default () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const LoginSchema = Yup.object().shape({
     username: Yup.string()
-      .min(6, 'Минимум 6 символов')
-      .max(50, 'Максимум 50 символов')
-      .required('Обязательное поле'),
+      .min(3, 'min3chars')
+      .max(20, 'max20chars')
+      .required('required'),
     password: Yup.string()
-      .min(6, 'Минимум 6 символов')
-      .max(50, 'Максимум 50 символов')
-      .matches(/[0-9]/, 'Минимум 1 цифра')
-      .required('Обязательное поле'),
+      .min(6, 'min6chars')
+      .max(50, 'max50chars')
+      .required('required'),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password')], 'errors.notSame')
-      .required('Обязательное поле'),
+      .oneOf([Yup.ref('password')], 'notSamePassword')
+      .required('required'),
   });
 
   // обязательное поле заменить на СПИСОК ВСЕХ УСЛОВИЙ поля
@@ -36,8 +37,10 @@ export default () => {
     onSubmit: (values) => {
       console.log(JSON.stringify(values), 'submit');
       alert(JSON.stringify(values, null, 2));
+      const { confirmPassword, ...requestData } = values;
+      console.log('requestData: ', requestData);
       try {
-        dispatch(registrationUser(values));
+        dispatch(registrationUser(requestData));
       } catch (e) {
         formik.setSubmitting(false);
         console.log(e.message);
@@ -48,7 +51,7 @@ export default () => {
 
   return (
     <Form onSubmit={formik.handleSubmit} className="col-12 col-md-8 rounded border border-dark p-4 mb-3">
-      <h3 className="text-center mb-3">Регистрация</h3>
+      <h3 className="text-center mb-3">{t('registrationPage.header')}</h3>
       <AuthFormField
         type="text"
         fieldName="username"
@@ -67,14 +70,14 @@ export default () => {
       />
       <AuthFormField
         type="password"
-        fieldName="confirm password"
+        fieldName="confirmPassword"
         handleChange={formik.handleChange}
         fieldValue={formik.values.confirmPassword}
         errorText={formik.errors.confirmPassword}
         isTouched={formik.touched.confirmPassword}
       />
       <Button className="col-12 col-md-12" variant="primary" type="submit">
-        Отправить
+        {t('registrationPage.signUp')}
       </Button>
     </Form>
   );

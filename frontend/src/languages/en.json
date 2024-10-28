@@ -4,18 +4,43 @@
     "appName": "Hexlet Chat",
     "errors": {
       "required": "Please fill out",
-      "outOfLenght": "Should be 3 to 20 characters",
-      "notUniqueChannel": "A channel with this name already exists"
+      "min3chars": "At least 3 characters",
+      "min6chars": "At least 6 characters",
+      "max20chars": "No more than 20 characters",
+      "max50chars": "No more than 50 characters",
+      "notSamePassword": "Passwords should match",
+      "userExists": "This user already exists",
+      "notUniqueChannel": "A channel with this name already exists",
+      "authFailed": "Wrong username or password"
+    },
+    "netErrors": {
+      "noConnection": "Connection error"
+    },
+    "field": {
+      "label": {
+        "username": "Nickname",
+      "password": "Password",
+        "confirmPassword": "Confirm password"
+      },
+      "enter": {
+        "username": "Enter nickname",
+        "password": "Enter password",
+        "confirmPassword": "Confirm password"
+      }
     },
     "navbar": {
       "logOut": "Log out"
     },
     "loginPage": {
       "header": "Sign in",
-      "username": "Nickname",
-      "password": "Password",
       "noAccount": "Don’t have an account?",
       "signUp": "Sign up"
+    },
+    "registrationPage": {
+      "header": "Registration",
+      "signUp": "Sign up",
+      "haveAccount": "Already registered?",
+      "login": "Log in with your username"
     },
     "modals": {
       "title": {
