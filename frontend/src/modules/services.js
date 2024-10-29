@@ -1,3 +1,3 @@
 export {
-  getToken, setToken, removeToken, clearStorage
+  getToken, getUsername, setToken, removeToken, clearStorage
 } from '../services/localStorage';

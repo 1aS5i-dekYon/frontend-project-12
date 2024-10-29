@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getToken, setToken } from '../services.js';
+import { setToken } from '../services.js';
 
 export const loginUser = createAsyncThunk(
   'login/loginUser',
@@ -13,16 +13,18 @@ export const loginUser = createAsyncThunk(
 
 const loginSlice = createSlice({
   name: 'login',
-  initialState: { token: null },
+  initialState: { token: null, username: null },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.fulfilled, (state, action) => {
         console.log('action:', action);
-        console.log('token before storage:', action.payload.token);
-        setToken(action.payload.token);
-        const token = getToken();
-        console.log('token:', token);
-        state.token = token;
+        console.log('token before storage:', action.payload);
+        setToken(action.payload);
+        // const token = getToken();
+        // const username = getUsername();
+        // console.log('token:', token);
+        // console.log('username:', username);
+        state = action.payload;
       })
       .addCase(loginUser.rejected, (state, action) => {
         console.log(state, '|', action.error);
