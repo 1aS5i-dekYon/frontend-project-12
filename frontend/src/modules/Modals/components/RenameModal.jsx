@@ -19,10 +19,10 @@ const RenameChannel = ({ handleClose, handleAction, existingChannelNames }) => {
   const validationSchema = object({
     name: string()
       .trim()
-      .required('errors.required')
-      .notOneOf(otherChannelNames, 'errors.notUniqueChannel')
-      .min(3, 'errors.outOfLenght')
-      .max(20, 'errors.outOfLenght'),
+      .required('required')
+      .notOneOf(otherChannelNames, 'notUniqueChannel')
+      .min(3, 'min3chars')
+      .max(20, 'max20chars'),
   });
 
   const formik = useFormik({

@@ -29,8 +29,6 @@ export default () => {
       .required('required'),
   });
 
-  // обязательное поле заменить на СПИСОК ВСЕХ УСЛОВИЙ поля
-
   const formik = useFormik({
     initialValues: { username: '', password: '', confirmPassword: '' },
     validationSchema: LoginSchema,

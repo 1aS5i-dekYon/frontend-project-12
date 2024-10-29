@@ -20,12 +20,14 @@
       "label": {
         "username": "Имя пользователя",
         "password": "Пароль",
-        "confirmPassword": "Подтвердите пароль"
+        "confirmPassword": "Подтвердите пароль",
+        "name": "Имя канала"
       },
       "enter": {
         "username": "Введите имя пользователя",
         "password": "Введите пароль",
-        "confirmPassword": "Подтвердите пароль"
+        "confirmPassword": "Подтвердите пароль",
+        "name": "Введите имя канала"
       }
     },
     "navbar": {

@@ -37,7 +37,7 @@ export default () => {
         dispatch(loginUser(values));
       } catch (e) {
         formik.setSubmitting(false);
-        console.log(e.message);
+        console.log('e.message:', e.message);
       }
       navigate('/');
     },

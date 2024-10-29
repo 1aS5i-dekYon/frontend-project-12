@@ -12,10 +12,10 @@ const AddModal = ({ handleClose, handleAction, existingChannelNames }) => {
   const validationSchema = object({
     name: string()
       .trim()
-      .required('errors.required')
-      .notOneOf(existingChannelNames, 'errors.notUnique')
-      .min(3, 'errors.outOfLenght')
-      .max(20, 'errors.outOfLenght'),
+      .required('required')
+      .notOneOf(existingChannelNames, 'notUniqueChannel')
+      .min(3, 'min3chars')
+      .max(20, 'max20chars'),
   });
 
   const formik = useFormik({
@@ -46,7 +46,7 @@ const AddModal = ({ handleClose, handleAction, existingChannelNames }) => {
             fieldName="name"
             handleChange={formik.handleChange}
             fieldValue={formik.values.name}
-            errorText={t(formik.errors.name)}
+            errorText={formik.errors.name}
             isTouched={formik.touched.name}
           />
           <FormBtnGroup

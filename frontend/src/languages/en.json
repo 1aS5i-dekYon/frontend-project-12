@@ -19,13 +19,15 @@
     "field": {
       "label": {
         "username": "Nickname",
-      "password": "Password",
-        "confirmPassword": "Confirm password"
+        "password": "Password",
+        "confirmPassword": "Confirm password",
+        "name": "Channel name"
       },
       "enter": {
         "username": "Enter nickname",
         "password": "Enter password",
-        "confirmPassword": "Confirm password"
+        "confirmPassword": "Confirm password",
+        "name": "Enter channel name"
       }
     },
     "navbar": {
